@@ -17,7 +17,7 @@ for(let count = 1; count <= 10; count++) {
 	for(let i = 1; i <= 2; i++) {
 		diff = Number(prompt(`${num1} - ${num2} = `))
 		if (check(num1,num2,diff) === true) {
-			console.log("Correct!")
+			console.log("Correct!\n")
 			correct++;
 			break;
 		}
