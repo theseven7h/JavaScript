@@ -19,8 +19,6 @@ const addName = function(names, empName) {
 while(true) {
 
 	let menu = Number(prompt("\n1. Add Employee payroll\n2. View Employee Payroll\n3. Update Employee Payroll\n4. Exit"));
-	let num = 1;
-	console.log("This is ",menu);
 	switch(menu) {
 		case 1:
 			while(true) {
