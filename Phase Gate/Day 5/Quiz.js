@@ -53,14 +53,16 @@ let questions = [
 {"q": "1 + 10\na) 2\nb) 11\nc) 7\nd) 3", "ans": "b"},	
 ];
 
-let removeQuestions = ["1","2","3","4","5","6","7","8","9","10"];
+
+let repeat = "";
 let wrongCount = 0;
 let rightCount = 0;
 let userChoice = "";
-let repeat = "";
+let gameCount = 0;
 
 while(repeat != "no") {
-	while(String(userChoice) != "0") {
+	let removeQuestions = ["1","2","3","4","5","6","7","8","9","10"];
+	while(String(userChoice) != "0" || gameCount < 10) {
 		userChoice = prompt("Choose question number (1-10) or 0 to quit: ");
 		check = qCheck(userChoice, removeQuestions);
 		
@@ -94,9 +96,9 @@ while(repeat != "no") {
 			console.log(message);
 			count--;
 		}
-		
+		gameCount++;
 		if(count == 2) rightCount++;
-		else wrongCount++;	
+		if(count == 0) wrongCount++;	
 	}
 	let repeat = "";
 	while(true) {
@@ -107,7 +109,7 @@ while(repeat != "no") {
 		console.log();
 	}
 	
-	if (repeat === "no") break;
+	if (repeat === "no" || gameCount == 10) break;
 }
 
 console.log("Correct: " + rightCount);
